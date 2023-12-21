@@ -1,0 +1,103 @@
+/* Universal & element selectors */
+body {
+    background-color: rgb(224, 213, 197);
+}
+
+h1 {
+    text-align: center;
+}
+
+button {
+    background-color: rgb(131, 12, 12);
+    color: antiquewhite;
+    font-size: medium;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ID selector */
+#signup {
+    font-size: large;
+    background-color: rgb(243, 181, 181);
+    color: black;
+    font-weight: 600;    
+}
+
+/* Class selector */
+.simpletext {
+    background-color: rgb(154, 137, 112);
+}
+
+/* Descendant selector */
+p span {
+    letter-spacing: 0.3cm;
+    background-color: rgb(219, 140, 30);
+}
+
+/* Adjacent and direct descendant selector */
+h2 + h3 {           /* ~ for general sibling ( + is for direct sibling ) */
+    color: aqua;
+}
+
+.adjacent > p {
+    background-color: rgb(231, 133, 27);
+    font-size: large;
+}
+
+/* Attribute selector */
+input[type="text"] {
+    color: rgb(200, 22, 22);
+    background-color: rgb(190, 159, 121);
+}
+
+a[href*="youtube"] {
+    font-size: larger;
+}
+
+a[href$=".ba"] {
+    color: red;
+}
+
+/* Pseudo class selectors */
+button:hover {
+    background-color: darkgoldenrod;
+    color: black;
+}
+
+#signup:hover {
+    background-color: black;
+    color: bisque;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    font-weight: 700;
+}
+
+#signup:active {
+    font-size: larger;
+    font-weight: 700;
+    color: red;
+}
+
+.nth {
+    height: 50px;
+}
+
+.nth:nth-of-type(2n) {
+    background-color: rgb(128, 118, 102);
+}
+
+/* Pseudo elements */
+.pselement > p::first-letter {
+    font-weight: 700;
+}
+
+.pselement >p::first-line {
+    color: red;
+}

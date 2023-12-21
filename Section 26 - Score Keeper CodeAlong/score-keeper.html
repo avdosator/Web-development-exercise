@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Keeper</title>
+    <link rel="stylesheet" href="score-keeper.css">
+</head>
+
+<body>
+
+    <section id="game">
+        <img src="https://images.unsplash.com/photo-1534158914592-062992fbe900?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1799&q=80"
+            alt="">
+            <div id="heading">Score keeper game</div>
+            <div id="score">
+                <h1><span id="player1Score">0</span> to <span id="player2Score">0</span></h1>
+                <p>Use the buttons below to score</p>
+            </div>
+        <div>
+            <label for="maxScore"><b>Playing to</b></label>
+            <select name="maxScore" id="maxScore">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+        <div id="buttons">
+            <button id="player1Bttn">+1 Player One</button><button id="player2Bttn">+1 Player Two</button><button
+                id="reset">Reset
+            </button>
+        </div>
+    </section>
+
+    <script src="score-keeper.js"></script>
+</body>
+
+</html>

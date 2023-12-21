@@ -1,0 +1,42 @@
+.win {
+    color: green;
+}
+
+.loose {
+    color: red;
+}
+
+#game {
+    width: 350px;
+}
+
+#selectLabel {
+    margin-right: 0;
+    padding-right: 0;
+}
+
+#selectGroup {
+    margin-bottom: 3%;    
+}
+
+.card-body {
+    padding: 0;
+}
+
+#heading {
+    padding-left: 10px;
+}
+
+#score {
+    padding-left: 20px;
+}
+
+#maxScore {
+    line-height: 1;
+    width: 17%;
+    margin-left: 5px;
+}
+
+#player1Score, #player2Score {
+    transition: color 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}

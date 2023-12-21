@@ -1,0 +1,97 @@
+
+h1 {
+    text-align: center;
+    background-color: rgb(156, 56, 56);
+}
+
+/* Display property */
+.heightwidth div {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(154, 126, 179);
+}
+
+/* Borders */
+#one {
+    border: 5px black solid;
+    box-sizing: border-box;
+}
+
+#two {
+    border: 5px red inset;
+}
+
+#three {
+    border-width: 10px;
+    border-color: yellow;
+    border-style: dashed dotted solid double;
+}
+
+/* Border-radius */
+
+button {
+    font-size: larger;
+}
+.radius #button1 {
+    border-radius: 50px;
+    border-color: magenta;
+}
+
+#button2 {
+    border-radius: 50% 20%;
+    border-color: magenta;
+}
+
+#button3 {
+    border-radius: 10px 80px 50px 100px;
+}
+
+#divradius {
+    width: 200px;
+    height: 200px;
+    background-color: violet;
+    border: 2px solid black;
+    border-radius: 50%;
+
+}
+
+/* Display and inline vs block element */
+.blockh3 {
+    /* width: 50%; */
+    background-color: brown;
+    border: 2px solid black;
+    display: block;
+    padding: 50px;
+    margin: 50px;
+}
+
+.inlineh3 {
+    /* width: 50%; */
+    background-color: brown;
+    border: 2px solid black;
+    display: inline;
+    padding: 50px;
+    margin: 50px;
+}
+
+span {
+    /* background-color: brown; */
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 2px rgb(78, 16, 16) solid;
+}
+
+#inline {
+    width: 100px;
+    height: 50px;
+    margin: 50px;
+    padding: 20px;
+}
+/* behave like inline but width, height, margin and padding are respected */
+#inline-block {
+    width: 100px;
+    height: 50px;
+    margin: 50px;
+    padding: 20px;
+    display: inline-block;
+}

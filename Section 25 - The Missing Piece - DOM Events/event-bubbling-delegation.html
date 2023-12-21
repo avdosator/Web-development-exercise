@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbling & Delegation</title>
+
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <section id="section" style="margin-top: 50px;"> I AM SECTION !!!
+        <div id="div">I AM DIV
+            <button id="bttn">Click me</button>
+        </div>
+    </section>
+    <hr>
+
+    <div id="container" style="margin-top: 50px;">
+        Click to hide
+        <button id="change">Change color</button>
+    </div>
+    <hr>
+
+    <h2>Event delegation</h2>
+    <form action="https://google.com" id="form2">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username">
+        <label for="comment">Comment</label>
+        <input type="text" name="comment" id="comment">
+        <button>Tweet</button>
+        <ul id="tweets">
+            <li>Starting item</li>
+            <li>Starting item</li>
+        </ul>
+    </form>
+
+    <script src="event-bubbling-delegation.js"></script>
+</body>
+</html>

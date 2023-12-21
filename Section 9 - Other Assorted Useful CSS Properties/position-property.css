@@ -1,0 +1,52 @@
+section {
+    margin-bottom: 100px;
+}
+
+
+div {
+    height: 100px;
+    width: 100px;
+    border: 2px black solid;
+    background-color: olive;
+    display: inline-block;
+}
+
+#middle {
+    background-color: burlywood;
+}
+
+/* Position property: static, relative, absolute, fixed, sticky */
+#static #middle {
+    position: static;
+    top: 50px;
+    left: 100px;
+}
+
+#relative #middle {
+    position: relative;
+    top: 50px;
+    left: -50px;
+}
+
+#absolute #middle {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+/* When this element's position is static, #middle element is positioned relative to body and when position is something else, #middle is
+relative to this element */
+#absolute {
+    position: relative;
+}
+
+#fixed #middle {
+    position: fixed;
+    top: 100px;
+    left: 1px;
+}
+
+#sticky #middle {
+    position: sticky;
+    left: 200px;
+}

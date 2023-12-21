@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Keeper</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="score-keeper-bootstrap.css">
+</head>
+
+<body>
+    <div id="container">
+
+        <div id="game" class="card mx-auto">
+            <img class="card-img-top w-100"
+                src="https://images.unsplash.com/photo-1534158914592-062992fbe900?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1799&q=80"
+                alt="">
+            <div class="card-body">
+
+                <div id="heading" class="fw-bold py-2 border-bottom">Ping Pong Score Keeper</div>
+                <div id="score">
+                    <h1 class="mt-1"><span id="player1Score">0</span> to <span id="player2Score">0</span></h1>
+                    <p>Use the buttons below to score</p>
+                
+                <div class="row" id="selectGroup">
+                    <label for="maxScore" id="selectLabel" class="col-3"><b>Playing to</b></label>
+                    <select name="maxScore" id="maxScore" class="form-select rounded-pill pl-0">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                </div>
+                <div id="buttons" class="btn-group w-100">
+                    <button id="player1Bttn" class="btn btn-success">+1 Player One</button>
+                    <button id="player2Bttn" class="btn btn-info">+1 Player Two</button>
+                    <button id="reset" class="btn btn-danger">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="score-keeper-bootstrap.js"></script>
+</body>
+
+</html>

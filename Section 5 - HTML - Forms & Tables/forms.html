@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" href="forms.css">
+</head>
+
+<body>
+    <h1>Forms</h1>
+    <hr>
+    <!-- DONE -->
+    <form class="login" action="Chicken.html">
+        <h2>Common input types and buttons</h2>
+        <p>
+            <label for="username">Enter your username</label>
+            <input class="loginput" id="username" type="text" placeholder="username" name="username">
+        </p>
+        <p>
+            <label for="password">Enter your password</label>
+            <input class="loginput" id="password" type="password" placeholder="password" name="password">
+        </p>
+        <p>
+            <label for="email">Enter your email</label>
+            <input class="loginput" id="email" type="email" placeholder="email" name="email">
+        </p>
+        <p>
+            <label for="birthdate">Enter your birthdate</label>
+            <input class="loginput" id="birthdate" type="date" name="birthdate">
+        </p>
+        <label for="loginbttn">Default submit button</label>
+        <button id="loginbttn">Submit</button><br>
+        <label for="defaultbttn">Button of type="button"</label>
+        <button id="defaultbttn" type="button">Submit</button>
+    </form>
+    <hr>
+
+    <!-- DONE -->
+    <section>
+        <h2>Using users input for searching on other pages via inputs attribute name="letter or word from url"</h2>
+        <h3>Youtube search</h3>
+        <form action="https://www.youtube.com/results?">
+            <input type="text" name="search_query">
+            <button>Youtube search</button>
+        </form>
+        
+        <h3>Wikipedia search</h3>
+        <form action="https://www.xvideos.com/?">
+            <input type="text" name="k">
+            <button>Wikipedia search</button>
+        </form>
+        
+        <h3>Google search</h3>
+        <form action="https://www.google.com/search?">
+            <input type="text" name="q">
+            <button>Google search</button>
+        </form>
+    </section>
+        <hr>
+    
+    <!-- DONE  -->
+    <h2>Checkbox input</h2>
+    <p>Choose your favourite sweets:</p>
+    <form action="/datacenter">
+        <div>
+            <input type="checkbox" name="mars" id="mars">
+            <label for="mars">Mars</label>
+        </div>
+        <div>
+            <input type="checkbox" name="snickers" id="snickers">
+            <label for="snickers">Snickers</label>
+        </div>
+        <div>
+            <input type="checkbox" name="bounty" id="bounty">
+            <label for="bounty">Bounty</label>
+        </div>
+        <div>
+            <input type="checkbox" name="milka" id="milka">
+            <label for="milka">Milka</label>
+        </div>
+        <div>
+            <input type="checkbox" name="corny" id="corny">
+            <label for="corny">Corny</label>
+        </div>
+        <div>
+            <input type="checkbox" name="lion" id="lion">
+            <label for="lion">Lion</label>
+        </div>
+        <div>
+            <input type="checkbox" name="eurovafel" id="eurovafel">
+            <label for="eurovafel">Eurovafel</label>
+        </div>
+        <button><b>Submit</b></button>
+    </form>
+    <hr>
+
+    <!-- DONE -->
+    <h2>Radio input</h2>
+    <form action="/heheh">
+        <p>Choose favourite color:</p>
+        <div>
+            <input type="radio" name="favcolor" id="white" value="white">
+            <label for="white">White</label>
+        </div>
+        <div>
+            <input type="radio" name="favcolor" id="black" value="black">
+            <label for="black">Black</label>
+        </div>
+        <div>
+            <input type="radio" name="favcolor" id="green" value="Green">
+            <label for="green">Green</label>
+        </div>
+        <div>
+            <input type="radio" name="favcolor" id="blue" value="blue">
+            <label for="blue">Blue</label>
+        </div>
+        <div>
+            <input type="radio" name="favcolor" id="grey" value="grey">
+            <label for="grey">Grey</label>
+        </div>
+        <button>Submit</button>
+    </form>
+    <hr>
+
+    <!-- DONE -->
+    <h2>Select input</h2>
+    <form action="Chicken.html">
+
+        <label for="edu">Select your education level</label>
+        <select name="edu" id="edu">
+            <option>Choose an option</option>
+            <option value="prim">Primary school</option>
+            <option value="sec">Secondary school</option>
+            <option value="bac">Bachelor</option>
+            <option value="mag">Magister</option>
+            <option value="doc">Doctor</option>
+        </select>
+        <button>Submit</button>
+    </form>
+    <hr>
+
+    <!-- DONE -->
+    <h2>Range input</h2>
+    <form action="www.google.com">
+        <label for="vol">Volume</label>
+        <input type="range" name="vol" id="vol" min="0" max="100" value="20">
+        <button>Submit</button>
+    </form>
+    <hr>
+
+    <!-- DONE -->
+    <h2>Textarea input</h2>
+    <p>
+        <label for="txt">Do you have any comments?</label><br>
+        <textarea name="txt" id="txt" cols="40" rows="10" placeholder="type here"></textarea>
+    </p>
+    <hr>
+
+    <!-- DONE -->
+    <h2>Validation form - required, minlength, maxlength attributes</h2>
+    <form action="Chicken.html">
+        <p>
+            <label for="fullname">Full name</label>
+            <input type="text" name="fullname" id="fullname" required>
+        </p>
+        <p>
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" minlength="3" maxlength="30" required>
+        </p>
+        <p>
+            <label for="pass">Password</label>
+            <input type="password" name="pass" id="pass" required>
+        </p>
+        <h3> step, min and max attributes for numberlike inputs</h3>
+        <p>
+            <label for="age">Age</label>
+            <input type="number" name="age" id="age" min="18" max="65" step="1">
+        </p>
+
+        <h3>These inputs require matching pattern</h3>
+        <p>
+            <label for="mail">E-mail</label>
+            <input type="email" name="mail" id="mail" required>
+        </p>
+        <p>
+            <label for="url">URL</label>
+            <input type="url" name="url" id="url" required>
+        </p>
+        <button>Submit</button>
+    </form>
+        
+
+</body>
+
+</html>

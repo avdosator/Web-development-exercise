@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap-basics.css">
+</head>
+
+<body>
+    <h1 class="display-1 text-center">Bootstrap basics</h1>
+    <hr>
+
+    <div class="container">
+        <h2 class="display-4">Container class</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia qui molestiae adipisci est illo earum
+            consequatur iste fugit corrupti commodi, fuga quasi beatae magnam distinctio officia. Fugit voluptatem
+            repudiandae et.
+            Ducimus, labore adipisci temporibus numquam repudiandae libero, nesciunt in reiciendis aliquam non
+            voluptatibus enim corrupti accusamus id! Tenetur, eius necessitatibus voluptatem dolorum, illum id quod
+            praesentium, cum suscipit dolores corporis!
+            Quam maxime laudantium nesciunt ab? Illo, accusantium possimus odit asperiores corporis laboriosam
+            voluptatem deleniti non hic. Non adipisci laudantium delectus iusto, sunt itaque ad, et assumenda magnam
+            illo nam ratione?</p>
+
+        <h3 class="text-muted">Lead class</h3>
+        <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur atque id maxime
+            necessitatibus
+            accusantium facilis et quam, aperiam asperiores consequuntur cum a ipsum placeat, dolorem dolore, amet
+            dolores expedita nostrum!</p>
+    </div>
+    <hr>
+
+    <div class="container">
+
+        <h2 class="display-4">Buttons</h2>
+        <h3 class="display-6">Regular buttons</h3>
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-warning">Warning</button>
+        <button class="btn btn-danger">Danger</button>
+        <h3 class="display-6">Outline buttons</h3>
+        <button class="btn btn-outline-primary">Primary</button>
+        <button class="btn btn-outline-secondary">Secondary</button>
+        <button class="btn btn-outline-warning">Warning</button>
+        <button class="btn btn-outline-dark">Dark</button>
+        <h3 class="display-6">Large and small buttons</h3>
+        <button class="btn btn-outline-primary btn-sm">Primary sm</button>
+        <button class="btn btn-outline-secondary">Secondary</button>
+        <button class="btn btn-warning btn-lg">Warning lg</button>
+        <h3 class="display-6">Block and disabled buttons</h3>
+        <button class="btn btn-info btn-block btn-lg">Primary block</button>
+        <button class="btn btn-success" disabled>Success disabled</button>
+        <a href="nothing" class="btn btn-primary">a like button</a>
+        <h3>Button group</h3>
+        <div class="btn-group">
+            <button class="btn btn-danger">One</button>
+            <button class="btn btn-warning">Two</button>
+            <button class="btn btn-info">Three</button>
+            <button class="btn btn-success">Four</button>
+        </div>
+        <h5>Without using button group</h5>
+        <button class="btn btn-danger">One</button>
+        <button class="btn btn-warning">Two</button>
+        <button class="btn btn-info">Three</button>
+        <button class="btn btn-success">Four</button>
+        <hr>
+
+        <h3>Blockquote class</h3>
+        <blockquote class="blockquote">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae, illum ab odio nihil porro ipsam, qui
+                nostrum voluptatibus ea, voluptates exercitationem cupiditate molestias laboriosam magnam consequatur
+                architecto nam consectetur vitae.</p>
+        </blockquote>
+        <footer class="blockquote-footer">Avdo Sator - blockquote-footer</footer>
+        <h4>Without blockquote</h4>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae, illum ab odio nihil porro ipsam, qui
+            nostrum voluptatibus ea, voluptates exercitationem cupiditate molestias laboriosam magnam consequatur
+            architecto nam consectetur vitae.</p>
+        <hr>
+
+        <h3>Badges and alerts</h3>
+        <button class="btn btn-primary" type="button">
+            Updates <span class="badge text-bg-light">5</span>
+        </button>
+        <button class="btn btn-info">
+            Info <span class="badge rounded-pill text-bg-danger">11</span>
+        </button>
+        <button type="button" class="btn btn-primary">
+            Notifications <span class="badge text-bg-secondary">4</span>
+        </button>
+        <hr>
+
+        <h3>Alerts</h3>
+
+        <div class="alert alert-danger">
+            <h5 class="alert-heading"> Danger!</h5>
+            You are going to die! Click button to continue living -> <button class="btn btn-success">Live!</button>
+        </div>
+        <div class="alert alert-warning alert-dismissible">
+            <h5 class="alert-heading"> Info for you!</h5>
+            You can't close this alert by clicking on the &times sign because this html is old -> check html of bottom alert
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span>&times</span>    
+            </button>
+        </div>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <h5 class="alert-heading"> Info for you!</h5>
+            You can close this alert by clicking on the &times sign in the end
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

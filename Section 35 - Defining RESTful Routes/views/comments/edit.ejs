@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <h1>Edit a comment:</h1>
+    <!-- with submiting this we are going to trigger app.patch request, we will "trick" the browser and call patch instead of post  -->
+    <form method="POST" action="/comments/<%= comm.id %>?_method=PATCH"> 
+        <textarea name="comment" id="" cols="30" rows="10">                     
+            <%= comm.comment %>
+        </textarea>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

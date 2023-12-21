@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap forms</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap-basics.css">
+</head>
+
+<body>
+    <h1 class="text-center text-danger">Bootstrap forms</h1>
+    <hr class="text-danger">
+    <div class="container">
+        <form action="grid.html">
+            <div>
+                <label for="fullname" class="form-label">Full name</label>
+                <input type="text" class="form-control" id="fullname" placeholder="name and surname">
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="e-mail">
+                </div>
+                <div class="col-md-6">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="password">
+                </div>
+            </div>
+            <div>
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="address" placeholder="Street and number">
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="city" class="form-label">City</label>
+                    <input type="text" class="form-control" id="city" placeholder="city">
+                </div>
+                <div class="col-6 col-md-3">
+                    <label for="county">Select your county</label>
+                    <select name="county" id="county" class="form-select">
+                        <option value="hnk">HNK</option>
+                        <option value="ks">KS</option>
+                        <option value="ze-do">ZE-DO</option>
+                        <option value="sbk">SBK</option>
+                    </select>
+                </div>
+                <div class="col-6 col-md-3">
+                    <label for="zip" class="form-label">Zip code</label>
+                    <input type="text" class="form-control" id="zip" placeholder="zip code">
+                </div>
+            </div>
+
+            <h3>Checkbox input</h3>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="checkbox">
+                <label for="checkbox" class="form-check-label">I agree with terms</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="disabledcheckbox" disabled>
+                <label class="form-check-label" for="disabledcheckbox">Disabled checkbox</label>
+            </div>
+
+            <h3>Radio input</h3>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" id="radio" name="chooseone">
+                <label for="radio" class="form-check-label">Radio input 1</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" id="radiodisabled" name="chooseone">
+                <label for="radiodisabled" class="form-check-label">Radio input 2</label>
+            </div>
+
+            <h3>Switch</h3>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+            </div>
+            <button class="btn btn-primary mt-3" type="submit">Register</button>
+
+        </form>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

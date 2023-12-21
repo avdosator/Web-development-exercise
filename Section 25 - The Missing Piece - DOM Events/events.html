@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <h1 style="text-align: center">Three type of events</h1>
+    <hr>
+    <!-- first type of events - inline (don't use) -->
+    <h2>Inline events - onclick attribute without js</h2>
+    <button id="bttn1" onclick="alert('You clicked a button 1. Do not use this type of inline events')">Click</button>
+    <hr>
+
+    <!-- second type - with using js, little improvement comparing to previous -> see events.js -->
+    <h2>onclick (and alike) property of needed html element</h2>
+    <button id="bttn2">Click</button>
+    <hr>
+
+    <!-- third, the best way to deal with events -->
+    <h2>Using addEventListener method</h2>
+    <button id="bttn3">Click</button>
+
+    <script src="events.js"></script>
+</body>
+</html>

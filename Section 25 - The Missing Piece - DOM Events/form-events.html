@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form events</title>
+</head>
+<body>
+    <h1>Form events and prevent default</h1>
+    <form action="https://google.com" id="form1">
+        <label for="catName">Cat name</label>
+        <input type="text" name="catName" id="catName">
+        <button id="catBttn">Submit</button>
+        <h3>Cat names</h3>
+        <ul id="cats">
+            
+        </ul>
+    </form>
+    <hr>
+
+    <h2>Form events - example 2</h2>
+    <form action="https://google.com" id="form2">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username">
+        <label for="comment">Comment</label>
+        <input type="text" name="comment" id="comment">
+        <button>Tweet</button>
+        <ul id="tweets">
+        </ul>
+    </form>
+    <hr>
+
+    <h2>Change and input events</h2>
+    <h3 id="h3">This will be changed dynamically</h3>
+    <label for="nick">Enter your nickname</label>
+    <input type="text" id="nick" name="nick">
+    <script src="form-events.js"></script>
+</body>
+</html>

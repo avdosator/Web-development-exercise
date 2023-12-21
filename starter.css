@@ -1,0 +1,75 @@
+body {
+    background-color: rgb(202, 194, 182);
+    padding-left: 10px;
+}
+
+button {
+    background-color: rgb(131, 12, 12);
+    color: antiquewhite;
+    font-size: medium;
+}
+
+.post a {
+    text-decoration: none;
+}
+
+#signup {
+    font-size: large;
+    background-color: rgb(243, 181, 181);
+    color: black;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-left: 20px;
+    
+}
+
+span {
+    color: rgb(188, 11, 11);
+}
+
+.tag {
+    background-color: rgb(59, 131, 113);
+    color: black;
+    letter-spacing: 0.5mm;
+    font-size: small;
+}
+
+input[type="text"] {
+    color: rgb(7, 7, 75);
+    border-radius: 3%;
+}
+
+.post button:hover {
+    background-color: darkgoldenrod;
+    color: black;
+}
+
+form > button:hover {
+    background-color: black;
+}
+
+.post a:hover {
+    text-decoration: underline solid;
+    font-weight: 600;
+}
+
+#signup:active {
+    background-color: red;
+}
+
+nav a:hover {
+    color: black;
+    font-weight: 700;
+}
+
+.post {
+    border: 2px magenta solid;
+    padding: 5px 0px 5px 10px;
+}
+
+section > h2 {
+    padding-left: 15px;
+}
+
+
+

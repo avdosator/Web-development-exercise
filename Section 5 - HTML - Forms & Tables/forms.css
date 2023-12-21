@@ -1,0 +1,30 @@
+h1 {
+    color: rgb(82, 24, 24);
+    background-color: bisque;
+    
+    /*width: 50%;*/
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.login {
+    color: rgb(43, 2, 2);
+    background-color: antiquewhite;
+    line-height: 1.5;
+    font-weight: 500;
+    text-decoration: wavy blue overline;
+}
+
+#loginbttn {
+    background-color: blueviolet;
+    color: black;
+    font-weight: 600;
+    border-radius: 10%;
+}
+
+.loginput {
+    border-radius: 10%;
+    border-color: blue;
+    background-color: yellowgreen;
+}
+

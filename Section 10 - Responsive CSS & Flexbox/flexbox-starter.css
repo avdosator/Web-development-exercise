@@ -1,0 +1,59 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+h1 {
+    text-align: center;
+}
+
+h2 {
+    padding-bottom: 10px;
+}
+
+/* Flex-direction, justify-content, flex-wrap, align-items */
+#container {
+    background-color: #003049;
+    width: 80%;
+    height: 400px;
+    margin: 0 auto;
+    border: 5px solid #003049;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-wrap: wrap-reverse;
+    align-items: flex-end;
+    align-content: flex-center;
+}
+
+ #container div {
+    width: 120px;
+    height: 120px;
+}
+
+/* It does not work when there is no room around column/row (when elements are next to each other) */
+#container div:nth-of-type(1) {
+    align-self: center;
+}
+
+
+/* Flex-basis, grow, shrink */
+#container2 {
+    background-color: #003049;
+    width: 80%;
+    /* height: 400px; */
+    margin: 0 auto;
+    border: 5px solid #003049;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+}
+
+#container2 div {
+    width: 120px;
+    height: 120px;
+    flex-basis: 150px;
+    flex-grow: 1;
+    flex-shrink: 2;
+    /* flex: 1 2 150px; */
+}
+

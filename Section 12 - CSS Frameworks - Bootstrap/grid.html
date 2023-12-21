@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid system</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap-basics.css">
+</head>
+
+<body>
+    <h1 class="display-1 text-primary text-center">Grid System</h1>
+    <hr>
+
+    <div class="container">
+        <h3>Evenly distributing space (col - class)</h3>
+        <div class="row">
+            <div class="col bg-primary text-center">Div 1</div>
+            <div class="col text-bg-secondary">Div 2</div>
+            <div class="col bg-info">Div 3</div>
+            <div class="col bg-danger">Div 4</div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col bg-primary text-center">Div 1</div>
+            <div class="col text-bg-secondary">Div 2</div>
+            <div class="col bg-info">Div 3</div>
+            <div class="col bg-danger">Div 4</div>
+            <div class="col bg-warning">Div 5</div>
+        </div>
+        <hr>
+
+        <h3>Using col-some number class</h3>
+        <div class="row">
+            <div class="col-4 bg-warning">Div</div>
+            <div class="col-4 bg-danger">Div</div>
+            <div class="col-4 bg-success">Div</div>
+            <div class="col-4 bg-dark text-light">Div</div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-1 bg-warning">Div</div>
+            <div class="col-2 bg-danger">Div</div>
+            <div class="col-3 bg-success">Div</div>
+            <div class="col-4 bg-dark text-light">Div</div>
+        </div>
+        <hr>
+
+        <h3>Mix col and col-some number</h3>
+        <div class="row">
+            <div class="col bg-warning">Div</div>
+            <div class="col bg-danger">Div</div>
+            <div class="col-8 bg-info">Div</div>
+            <div class="col bg-success">Div</div>
+            <div class="col bg-dark text-light">Div</div>
+            <div class="col bg-warning">Div</div>
+        </div>
+        <div class="container">
+            Container in container
+            <div class="row">
+                <div class="col bg-warning">Div</div>
+                <div class="col-5 bg-info">Div</div>
+                <div class="col bg-warning">Div</div>
+            </div>
+        </div>
+        <hr>
+        <br>
+
+        <h3>Responsive grid - check dev tools</h3>
+        <h5>Without breakpoints</h5>
+        <div class="row">
+            <div class="col-6 bg-info">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius accusamus, praesentium nobis assumenda
+                vero, iure voluptates quidem porro laborum quis repudiandae. Aspernatur hic placeat, nobis illo non unde
+                adipisci dolorum.
+            </div>
+            <div class="col-6 bg-success">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit molestias vero cum illo consectetur
+                maxime. Quis asperiores ducimus voluptas quia vitae ad provident quas accusantium quidem, velit sunt
+                expedita. Doloremque!
+            </div>
+        </div>
+        <h5>With one breakpoint</h5>
+        <div class="row">
+            <div class="col-md-6 bg-info">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius accusamus, praesentium nobis assumenda
+                vero, iure voluptates quidem porro laborum quis repudiandae. Aspernatur hic placeat, nobis illo non unde
+                adipisci dolorum.
+            </div>
+            <div class="col-md-6 bg-success">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit molestias vero cum illo consectetur
+                maxime. Quis asperiores ducimus voluptas quia vitae ad provident quas accusantium quidem, velit sunt
+                expedita. Doloremque!
+            </div>
+        </div>
+        <h5>With more breakpoints</h5>
+        <div class="row">
+            <div class="col-md-6 col-l-4 col-xl-3 bg-info">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius accusamus, praesentium nobis assumenda
+                vero, iure voluptates quidem porro laborum quis repudiandae. Aspernatur hic placeat, nobis illo non unde
+                adipisci dolorum.
+            </div>
+            <div class="col-md-6 col-l-4 col-xl-3 bg-success">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit molestias vero cum illo consectetur
+                maxime. Quis asperiores ducimus voluptas quia vitae ad provident quas accusantium quidem, velit sunt
+                expedita. Doloremque!
+            </div>
+            <div class="col-md-6 col-l-4 col-xl-3 bg-info">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit molestias vero cum illo consectetur
+                maxime. Quis asperiores ducimus voluptas quia vitae ad provident quas accusantium quidem, velit sunt
+                expedita. Doloremque!
+            </div>
+            <div class="col-md-6 col-l-4 col-xl-3 bg-success">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit molestias vero cum illo consectetur
+                maxime. Quis asperiores ducimus voluptas quia vitae ad provident quas accusantium quidem, velit sunt
+                expedita. Doloremque!
+            </div>
+        </div>
+        <hr>
+        <br>
+
+        <h3>Grid Alignment</h3>
+        <div class="row align-items-center justify-content-lg-around">
+            <div class="col-2 bg-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum corporis sint alias
+                aliquid? Velit tempora atque, illum sapiente et suscipit! Illo dicta veniam, quidem assumenda autem cum
+                officiis eligendi? Eius!</div>
+            <div class="col-2 bg-success">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum corporis sint
+                alias aliquid? Velit tempora atque, illum sapiente et suscipit! Illo dicta veniam, quidem assumenda
+                autem cum officiis eligendi? Eius!</div>
+            <div class="col-2 bg-warning">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum corporis sint
+                alias aliquid? Velit tempora atque, illum sapiente et suscipit! Illo dicta veniam, quidem assumenda
+                autem cum officiis eligendi? Eius! Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit in
+                minus doloribus distinctio rem, blanditiis libero inventore voluptatum necessitatibus enim nisi ratione,
+                illum, illo iste ex quo totam quos nihil.</div>
+            <div class="col-2 bg-danger align-self-end">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum corporis sint
+                alias aliquid? Velit tempora atque, illum sapiente et suscipit! Illo dicta veniam, quidem assumenda
+                autem cum officiis eligendi? Eius!</div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
