@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
+const AppError = require("./AppError.js");
 
 app.use(morgan("dev"));
 
@@ -17,7 +18,7 @@ const verifyPassword = (req, res, next) => {
         next();
     }  
     //res.send("Your password is not correct! Try again.");
-    throw new Error("Password required!");
+    throw new AppError("Password required!", 401);
 }
 
 // this will be executed only if we hit /dogs route, but it will hit app.get("/dogs") because we call next() in it
@@ -47,7 +48,8 @@ app.use((req, res) => {
 });
 
 app.use((err, req, res, next) => {
-    res.send("Error!!!!!!");
+    const {message = "Something went wrong", status = 500} = err;
+    res.status(status).send(message);
     // next(err); if we want to hit express built in (default) error handler we call next like this (it doesnt make sense to do this)
 })
 
