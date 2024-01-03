@@ -23,14 +23,18 @@ app.use(methodOverride("_method"));
 
 const categories = ["fruit", "vegetable", "dairy"]; 
 
-app.get("/products", async (req, res) => {
-    const {cat} = req.query; 
-    if(cat) { 
-        const products = await Product.find({category: cat});
-        res.render("products/index", {products, cat});
-    } else { 
-        const products =  await Product.find({});
-        res.render("products/index", {products, cat: "All"});
+app.get("/products", async (req, res, next) => {
+    try {
+        const {cat} = req.query; 
+        if(cat) { 
+            const products = await Product.find({category: cat});
+            res.render("products/index", {products, cat});
+        } else { 
+            const products =  await Product.find({});
+            res.render("products/index", {products, cat: "All"});
+        }
+    } catch (e) {
+        next(e);
     }
 });
 
@@ -39,31 +43,46 @@ app.get("/products/new", (req, res) => {
 })
 
 app.get("/products/:id", async (req, res, next) => {
-    const {id} = req.params;
-    const foundProduct = await Product.findById(id);
-    if(!foundProduct) {
-        next(new AppError("Product Not Found!", 404));
-    } else {
+    try {
+        const {id} = req.params;
+        const foundProduct = await Product.findById(id);
+        if(!foundProduct) {
+            throw new AppError("Product Not Found!", 404);
+        }
         res.render("products/show", {foundProduct}); // instead of putting this in else block we could return that call of next
+    } catch (e) {
+        next(e);
     }
 });
 
-app.post("/products", async (req, res) => {
-    const newProduct = new Product(req.body);
-    await newProduct.save();
-    res.redirect(`/products/${newProduct._id}`);
+app.post("/products", async (req, res, next) => {
+    try {
+        const newProduct = new Product(req.body);
+        await newProduct.save();
+        res.redirect(`/products/${newProduct._id}`);
+    } catch (e) {
+        next(e);
+    }
 });
 
-app.get("/products/:id/edit", async (req, res) => {
-    const {id} = req.params;
-    const product = await Product.findById(id);
-    res.render("products/edit", {product, categories});
+app.get("/products/:id/edit", async (req, res, next) => {
+    try {
+        const {id} = req.params;
+        const product = await Product.findById(id);
+        res.render("products/edit", {product, categories}); 
+    } catch (e) {
+        next(e);
+    }
 });
 
-app.put("/products/:id", async (req, res) => {
-    const {id} = req.params;
-    const product = await Product.findByIdAndUpdate(id, req.body, {new: true, runValidators: true});
-    res.redirect(`/products/${id}`);
+app.put("/products/:id", async (req, res, next) => {
+    try {
+        const {id} = req.params;
+        const product = await Product.findByIdAndUpdate(id, req.body, {new: true, runValidators: true});
+        res.redirect(`/products/${id}`);
+    } catch (e) {
+        next(e);
+    }
 });
 
 app.delete("/products/:id", async (req, res) => {
