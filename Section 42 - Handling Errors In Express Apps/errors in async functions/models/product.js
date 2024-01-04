@@ -7,10 +7,12 @@ const productSchema = new mongoose.Schema({
     },
     price: {
         type: Number,
-        min: 0
+        min: 0,
+        required: true
     },
     category: {
         type: String,
+        required: true,
         lowercase: true, // if we misstype "fruit" it will lowercase it automatically
         enum: ["fruit", "vegetable", "dairy"] //later try with exporting array from index.js and put it here
     }
