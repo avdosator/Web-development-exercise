@@ -3,16 +3,16 @@ const mongoose = require("mongoose"); // we need this because we will use mongoo
 const productSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: [true, "Name can't be empty"]
     },
     price: {
         type: Number,
         min: 0,
-        required: true
+        required: [true, "Price can't be empty"]
     },
     category: {
         type: String,
-        required: true,
+        required: [true, "You must choose one of options"],
         lowercase: true, // if we misstype "fruit" it will lowercase it automatically
         enum: ["fruit", "vegetable", "dairy"] //later try with exporting array from index.js and put it here
     }
