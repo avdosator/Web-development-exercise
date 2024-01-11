@@ -1,0 +1,14 @@
+{
+  "name": "section-44---data-relationships-with-mongo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "one-to-few.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^8.0.4"
+  }
+}
