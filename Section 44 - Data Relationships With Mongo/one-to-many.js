@@ -26,8 +26,20 @@ const farmSchema = new Schema({
 const Product = mongoose.model("Product", productSchema);
 const Farm = mongoose.model("Farm", farmSchema);
 
-Product.insertMany([
+/* Product.insertMany([
     {name: "Watermellon", price: 1.99, season: "summer"},
     {name: "Tomato", price: 2.50, season: "summer"},
     {name: "Plum", price: 1.50, season: "fall"}
-]);
+]); */
+
+//const farm = new Farm({name: "OB Farm", city: "Sarajevo"});
+// farm.save();
+
+const addProducts = async () => {
+    const farm = await Farm.findOne({name: "OB Farm"});
+    const product = await Product.findOne({name: "Watermellon"});
+    farm.products.push(product); // this will add the products ObjectId to the array and that is visible in mongo db (populate() is showing whole product details)
+    await farm.save();  
+}
+
+addProducts();
