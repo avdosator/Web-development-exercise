@@ -42,4 +42,8 @@ const addProducts = async () => {
     await farm.save();  
 }
 
-addProducts();
+//addProducts();
+
+Farm.findOne({name: "OB Farm"})
+    .populate("products") // when we need data of object with ID that is stored in products
+    .then(farm => console.log(farm));
