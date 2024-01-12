@@ -25,3 +25,9 @@ const farmSchema = new Schema({
 
 const Product = mongoose.model("Product", productSchema);
 const Farm = mongoose.model("Farm", farmSchema);
+
+Product.insertMany([
+    {name: "Watermellon", price: 1.99, season: "summer"},
+    {name: "Tomato", price: 2.50, season: "summer"},
+    {name: "Plum", price: 1.50, season: "fall"}
+]);
