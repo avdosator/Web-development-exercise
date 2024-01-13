@@ -9,7 +9,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/relationshipDemo")
     });
 
 const userSchema = new Schema({
-    name: String,
+    username: String,
     age: Number
 });
 
@@ -21,3 +21,9 @@ const tweetSchema = new Schema({
 
 const User = mongoose.model("User", userSchema);
 const Tweet = mongoose.model("Tweet", tweetSchema);
+
+const makeTweets = async () => {
+    const user = new User({username: "Tviteras", age: 20});
+    const tweet1 = new Tweet({text: "This is my first tweet", likes: 0});
+    tweet1.user = user; // mongoose will automatically take ID and embed it
+}
