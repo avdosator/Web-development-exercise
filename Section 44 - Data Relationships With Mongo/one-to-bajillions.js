@@ -26,4 +26,6 @@ const makeTweets = async () => {
     const user = new User({username: "Tviteras", age: 20});
     const tweet1 = new Tweet({text: "This is my first tweet", likes: 0});
     tweet1.user = user; // mongoose will automatically take ID and embed it
+    user.save();
+    tweet1.save();
 }
