@@ -13,4 +13,11 @@ const userSchema = new Schema({
     age: Number
 });
 
+const tweetSchema = new Schema({
+    text: String,
+    likes: Number,
+    user: { type: Schema.Types.ObjectId, ref: "User"}
+});
+
 const User = mongoose.model("User", userSchema);
+const Tweet = mongoose.model("Tweet", tweetSchema);
