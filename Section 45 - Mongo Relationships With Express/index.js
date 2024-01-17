@@ -8,6 +8,7 @@ const path = require("path");
 const methodOverride = require("method-override"); 
 
 const Product = require("./models/product");
+const Farm = require("./models/farm");
 
 mongoose.connect("mongodb://127.0.0.1:27017/farmStand2") 
     .then(() => {                                      
@@ -21,6 +22,15 @@ app.set("view engine", "ejs"); // we use ejs like this when we install it
 app.set("views", path.join(__dirname, "views"));
 app.use(methodOverride("_method"));
 
+// FARM ROUTES
+
+app.get("/farms", async (req, res) => {
+    const farms = await Farm.find({});
+    res.render("/farms/index", {farms});
+});
+
+
+// PRODUCT ROUTES
 const categories = ["fruit", "vegetable", "dairy"]; 
 
 app.get("/products", async (req, res) => {
