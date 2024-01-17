@@ -1,6 +1,7 @@
-const mongoose = require("mongoose"); // we need this because we will use mongoose for making schema and model (we will connect to database just in index.js)
-//const categories = require("./index"); how can I get categories from index.js and use it here in enum?
-const productSchema = new mongoose.Schema({
+const mongoose = require("mongoose"); 
+const {Schema} = mongoose;
+
+const productSchema = new Schema({
     name: {
         type: String,
         required: true
@@ -11,8 +12,12 @@ const productSchema = new mongoose.Schema({
     },
     category: {
         type: String,
-        lowercase: true, // if we misstype "fruit" it will lowercase it automatically
-        enum: ["fruit", "vegetable", "dairy"] //later try with exporting array from index.js and put it here
+        lowercase: true, 
+        enum: ["fruit", "vegetable", "dairy"] 
+    },
+    farm: {
+        type: Schema.Types.ObjectId,
+        ref: "Farm"
     }
 });
 
