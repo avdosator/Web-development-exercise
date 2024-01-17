@@ -26,7 +26,11 @@ app.use(methodOverride("_method"));
 
 app.get("/farms", async (req, res) => {
     const farms = await Farm.find({});
-    res.render("/farms/index", {farms});
+    res.render("farms/index", {farms});
+});
+
+app.get("/farms/new", (req, res) => {
+    res.render("farms/new");
 });
 
 
