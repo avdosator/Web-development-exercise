@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= cat %> Products</title>
+</head>
+<body>
+    <h1><%= cat %> products</h1>
+    <ul>
+        <% for(product of products) {%>
+        <li><a href="/products/<%= product._id %>"><%= product.name %></a></li> <!-- it also accepts without underscore -->
+        <% } %>
+    </ul>
+    <% if (cat !== "All") { %>
+        <a href="/products">All products</a>    
+    <% } else { %>
+        <a href="/products/new">Add Product</a>
+    <% } %>    
+</body>
+</html>
