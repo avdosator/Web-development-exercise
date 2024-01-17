@@ -33,6 +33,12 @@ app.get("/farms/new", (req, res) => {
     res.render("farms/new");
 });
 
+app.post("/farms", async (req, res) => {
+    const farm = new Farm(req.body);
+    await farm.save();
+    res.redirect("/farms");
+});
+
 
 // PRODUCT ROUTES
 const categories = ["fruit", "vegetable", "dairy"]; 
