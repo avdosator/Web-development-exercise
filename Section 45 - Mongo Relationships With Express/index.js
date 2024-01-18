@@ -87,7 +87,7 @@ app.get("/products/new", (req, res) => {
 
 app.get("/products/:id", async (req, res) => {
     const {id} = req.params;
-    const foundProduct = await Product.findById(id);
+    const foundProduct = await Product.findById(id).populate("farm", "name");
     res.render("products/show", { foundProduct });
 });
 
