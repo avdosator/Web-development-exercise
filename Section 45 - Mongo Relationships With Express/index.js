@@ -42,7 +42,8 @@ app.get("/farms/new", (req, res) => {
 });
 
 app.get("/farms/:id/products/new", (req, res) => {
-    res.render("products/new");
+    const { id } = req.params;
+    res.render("products/new", { id, categories });
 })
 
 app.get("/farms/:id", async (req, res) => {
