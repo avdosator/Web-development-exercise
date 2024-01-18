@@ -41,11 +41,16 @@ app.get("/farms/new", (req, res) => {
     res.render("farms/new");
 });
 
+app.get("/farms/:id/products/new", (req, res) => {
+    res.render("products/new");
+})
+
 app.get("/farms/:id", async (req, res) => {
     const {id} = req.params;
     const farm = await Farm.findById(id);
     res.render("farms/show", { farm });
 });
+
 
 
 
