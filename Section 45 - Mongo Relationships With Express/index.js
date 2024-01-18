@@ -44,7 +44,7 @@ app.get("/farms/new", (req, res) => {
 
 app.get("/farms/:id", async (req, res) => {
     const {id} = req.params;
-    const farm = await Farm.findById(id);
+    const farm = await Farm.findById(id).populate("products"); // populate it so we can use product name and other stuff when rendering farms show page
     res.render("farms/show", { farm });
 });
 
