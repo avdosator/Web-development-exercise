@@ -22,15 +22,13 @@ app.set("view engine", "ejs"); // we use ejs like this when we install it
 app.set("views", path.join(__dirname, "views"));
 app.use(methodOverride("_method"));
 
+
+
 // FARM ROUTES
 
 app.get("/farms", async (req, res) => {
     const farms = await Farm.find({});
-    res.render("farms/index", {farms});
-});
-
-app.get("/farms/new", (req, res) => {
-    res.render("farms/new");
+    res.render("farms/index", { farms });
 });
 
 app.post("/farms", async (req, res) => {
@@ -38,6 +36,18 @@ app.post("/farms", async (req, res) => {
     await farm.save();
     res.redirect("/farms");
 });
+
+app.get("/farms/new", (req, res) => {
+    res.render("farms/new");
+});
+
+app.get("/farms/:id", async (req, res) => {
+    const {id} = req.params;
+    const farm = await Farm.findById(id);
+    res.render("farms/show", { farm });
+});
+
+
 
 
 // PRODUCT ROUTES
@@ -55,31 +65,31 @@ app.get("/products", async (req, res) => {
 });
 
 app.get("/products/new", (req, res) => {
-    res.render("products/new", {categories});
+    res.render("products/new", { categories });
 })
 
 app.get("/products/:id", async (req, res) => {
     const {id} = req.params;
     const foundProduct = await Product.findById(id);
-    res.render("products/show", {foundProduct});
+    res.render("products/show", { foundProduct });
 });
 
 app.post("/products", async (req, res) => {
     const newProduct = new Product(req.body); 
     await newProduct.save();
-    res.redirect(`/products/${newProduct._id}`);
+    res.redirect(`/products/${ newProduct._id }`);
 });
 
 app.get("/products/:id/edit", async (req, res) => {
     const {id} = req.params;
     const product = await Product.findById(id);
-    res.render("products/edit", {product, categories});
+    res.render("products/edit", { product, categories });
 });
 
 app.put("/products/:id", async (req, res) => {
     const {id} = req.params;
     const product = await Product.findByIdAndUpdate(id, req.body, {new: true, runValidators: true});
-    res.redirect(`/products/${id}`);
+    res.redirect(`/products/${ id }`);
 });
 
 app.delete("/products/:id", async (req, res) => {
