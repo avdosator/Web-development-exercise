@@ -66,6 +66,11 @@ app.post("/farms/:id/products", async (req, res) => {
     res.redirect(`/farms/${farm._id}`);
 });
 
+app.delete("/farms/:id", (req, res) => {
+    const farm = Farm.findByIdAndDelete(req.params.id);
+    res.redirect("/farms");
+});
+
 
 
 // PRODUCT ROUTES
