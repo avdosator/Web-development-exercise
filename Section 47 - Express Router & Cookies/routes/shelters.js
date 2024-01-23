@@ -2,19 +2,19 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-    res.send("Viewing all products");
+    res.send("Viewing all shelters");
 });
 
 router.get("/:id", (req, res) => {
-    res.send("Viewing one product");
+    res.send("Viewing one shelter");
 });
 
 router.post("/", (req, res) => {
-    res.send("Adding a product");
+    res.send("Adding a shelter");
 });
 
 router.get("/:id/edit", (req, res) => {
-    res.send("Editing one product");
+    res.send("Editing one shelter");
 });
 
 module.exports = router;
