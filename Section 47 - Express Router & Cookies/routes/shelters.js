@@ -1,20 +1,20 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/shelters", (req, res) => {
-    console.log("Viewing all shelters");
+router.get("/", (req, res) => {
+    res.send("Viewing all products");
 });
 
-router.get("/shelters/:id", (req, res) => {
-    console.log("Viewing one shelter");
+router.get("/:id", (req, res) => {
+    res.send("Viewing one product");
 });
 
-router.post("/shelters", (req, res) => {
-    console.log("Adding shelter");
+router.post("/", (req, res) => {
+    res.send("Adding a product");
 });
 
-router.get("/shelters/:id/edit", (req, res) => {
-    console.log("Editing one shelter");
+router.get("/:id/edit", (req, res) => {
+    res.send("Editing one product");
 });
 
 module.exports = router;
