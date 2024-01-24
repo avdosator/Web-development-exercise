@@ -4,8 +4,10 @@ const router = express.Router();
 router.use( (req, res, next) => {
     if(req.query.isAdmin) {
         next();
+    } else {
+        res.send("YOU ARE NOT AN ADMIN!");
+
     }
-    res.send("YOU ARE NOT AN ADMIN!");
 });
 
 router.get("/secret", (req, res) => {
