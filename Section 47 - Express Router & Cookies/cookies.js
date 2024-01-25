@@ -21,6 +21,10 @@ app.get("/signedcookie", (req, res) => {
     res.send("We created signed cookie");
 });
 
+app.get("/usesignedcookies", (req, res) => {
+    res.send(req.signedCookies); // signed cookies are separated from basic cookies
+});
+
 app.listen(3000, () => {
     console.log("CONNECTED");
 });
