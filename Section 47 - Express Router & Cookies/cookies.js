@@ -3,7 +3,7 @@ const app = express();
 
 const cookieParser = require("cookie-parser");
 
-app.use(cookieParser());
+app.use(cookieParser("secret")); // cookieParser needs parameter so it could parse signed cookies
 
 app.get("/greet", (req, res) => {
     const {name, surname} = req.cookies;
@@ -14,6 +14,11 @@ app.get("/setcookie", (req, res) => {
     res.cookie("name", "avdo");
     res.cookie("surname", "sator");
     res.send("Cookies sent");
+});
+
+app.get("/signedcookie", (req, res) => {
+    res.cookie("bankAccount", "1567577", {signed: true});
+    res.send("We created signed cookie");
 });
 
 app.listen(3000, () => {
