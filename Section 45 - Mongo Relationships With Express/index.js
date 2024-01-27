@@ -6,6 +6,8 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const methodOverride = require("method-override"); 
+const session = require("express-session");
+const flash = require("connect-flash");
 
 const Product = require("./models/product");
 const Farm = require("./models/farm");
@@ -16,6 +18,11 @@ mongoose.connect("mongodb://127.0.0.1:27017/farmStand2")
     }).catch(err => {
         console.log(err);
     });
+
+// we need this for using flash
+const sessionOptions = {secret: "badsecret", resave: false, saveUninitialized: false};
+app.use(session(sessionOptions));
+app.use(flash());
 
 app.use(express.urlencoded( { extended: "true"})); // now we can extract params from url (req.body)
 app.set("view engine", "ejs"); // we use ejs like this when we install it
