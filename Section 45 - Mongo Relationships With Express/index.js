@@ -34,14 +34,17 @@ const categories = ["fruit", "vegetable", "dairy"];
 
 // FARM ROUTES
 
+// We get flash message with success key on this way and then we use messages property whathever we want (in show page is just an h2)
 app.get("/farms", async (req, res) => {
     const farms = await Farm.find({});
-    res.render("farms/index", { farms });
+    res.render("farms/index", { farms, messages: req.flash("success") });
 });
 
+// we will show here how flash works
 app.post("/farms", async (req, res) => {
     const farm = new Farm(req.body);
     await farm.save();
+    req.flash("success", "You successfully created a farm!");
     res.redirect("/farms");
 });
 

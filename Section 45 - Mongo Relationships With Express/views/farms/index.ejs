@@ -9,6 +9,7 @@
 
 <body>
     <h1>All Farms</h1>
+    <h2> <%= messages %></h2>
     <ul>
         <% for(farm of farms) {%>
             <li><a href="/farms/<%= farm._id %>"><%= farm.name %></a></li>
