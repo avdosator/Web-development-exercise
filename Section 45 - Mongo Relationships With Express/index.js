@@ -31,13 +31,17 @@ app.use(methodOverride("_method"));
 
 const categories = ["fruit", "vegetable", "dairy"]; 
 
+// nice way to use flash messages. Now we don't need to call req.flash() in every route and don't need to proceed messages to res.render()
+app.use((req, res, next) => {
+    res.locals.messages = req.flash("success");
+    next();
+});
 
 // FARM ROUTES
 
-// We get flash message with success key on this way and then we use messages property whathever we want (in show page is just an h2)
 app.get("/farms", async (req, res) => {
     const farms = await Farm.find({});
-    res.render("farms/index", { farms, messages: req.flash("success") });
+    res.render("farms/index", { farms /*messages: req.flash("success") we don't need this anymore because we have access to messages property in every route because of middleware*/ });
 });
 
 // we will show here how flash works
