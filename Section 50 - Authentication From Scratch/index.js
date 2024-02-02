@@ -20,7 +20,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/authDemo")
     });
 
 app.get("/register", (req, res) => {
-    res.send("/register");
+    res.render("register");
 });
 
 app.listen(3000, () => {
