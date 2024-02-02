@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const session = require("express-session");
+const bcrypt = require("bcrypt");
 const path = require("path");
 
 const User = require("./models/user");
@@ -21,6 +22,16 @@ mongoose.connect("mongodb://127.0.0.1:27017/authDemo")
 
 app.get("/register", (req, res) => {
     res.render("register");
+});
+
+app.post("/register", async(req, res) => {
+    const {username, password} = req.body;
+    const user = new User({
+        username,
+        password: await bcrypt.hash(password, 12)
+    });
+    await user.save();
+    res.send("YOU HAVE SIGNED UP!");
 });
 
 app.listen(3000, () => {
