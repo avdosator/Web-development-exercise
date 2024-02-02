@@ -5,6 +5,11 @@ const path = require("path");
 
 const app = express();
 
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+
+app.use(express.urlencoded({extended: "true"}));
+
 mongoose.connect("mongodb://127.0.0.1:27017/authDemo") 
     .then(() => {                                      
         console.log("Connected to database");
