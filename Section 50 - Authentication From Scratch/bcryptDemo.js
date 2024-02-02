@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 const hashPassword = async function(password) {
     const salt = await bcrypt.genSalt(12);
     const hashedPw = await bcrypt.hash(password, salt);
+    // const hashedPw = await bcrypt.hash(password, 12); like this we don't have to call genSalt explicitly, we do it in one go
     console.log(salt);
     console.log(hashedPw);
 }
