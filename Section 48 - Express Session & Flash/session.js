@@ -7,7 +7,7 @@ const express = require("express");
 const app = express();
 const session = require("express-session");
 
-const sessionOptions = {secret: "badsecret", resave: false, saveUninitialized: false}; // second and third option to remove warnings
+const sessionOptions = {secret: "badsecret", resave: false, saveUninitialized: true}; // second and third option to remove warnings
 app.use(session(sessionOptions));
 
 app.get("/viewcount", (req, res) => {
