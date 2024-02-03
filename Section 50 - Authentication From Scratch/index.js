@@ -34,6 +34,21 @@ app.post("/register", async(req, res) => {
     res.send("YOU HAVE SIGNED UP!");
 });
 
+app.get("/login", async(req, res) => {
+    res.render("login");
+})
+
+app.post("/login", async(req, res) => {
+    const {username, password} = req.body;
+    const user = await User.findOne({ username });
+    const isValid = await bcrypt.compare(password, user.password);
+    if(isValid) {
+        res.send("WELCOME");
+    } else {
+        res.send("TRY AGAIN");
+    }
+});
+
 app.listen(3000, () => {
     console.log("Connected on port 3000");
 });
