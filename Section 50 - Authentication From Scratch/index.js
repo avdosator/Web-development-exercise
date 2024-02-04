@@ -34,6 +34,7 @@ app.post("/register", async(req, res) => {
         password: await bcrypt.hash(password, 12)
     });
     await user.save();
+    req.session.user_id = user._id;
     res.send("YOU HAVE SIGNED UP!");
 });
 
@@ -46,9 +47,10 @@ app.post("/login", async(req, res) => {
     const user = await User.findOne({ username });
     const isValid = await bcrypt.compare(password, user.password);
     if(isValid) {       // we don't want to somebody to know if problem is in password or username, just say that problem is in one or other (we don't wanna give hackers a clue)
-        res.send("WELCOME");    
+        req.session.user_id = user._id;
+        res.redirect("/secret");
     } else {
-        res.send("TRY AGAIN");
+        res.redirect("/login");
     }
 });
 
