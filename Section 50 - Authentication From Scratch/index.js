@@ -64,6 +64,10 @@ app.get("/secret", requireLogin, (req, res) => {
         res.render("secret");
 });
 
+app.get("/topsecret", requireLogin, (req, res) => {
+    res.send("TOP SECRET");
+});
+
 app.post("/logout", (req, res) => {
     //req.session.user_id = null;  we use this if we need just to get rid of user_id property
     req.session.destroy(); // we use this if we want to remove entire session
