@@ -62,6 +62,12 @@ app.get("/secret", (req, res) => {
     }
 });
 
+app.post("/logout", (req, res) => {
+    //req.session.user_id = null;  we use this if we need just to get rid of user_id property
+    req.session.destroy(); // we use this if we want to remove entire session
+    res.redirect("/login");
+});
+
 app.listen(3000, () => {
     console.log("Connected on port 3000");
 });
