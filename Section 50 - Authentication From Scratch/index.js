@@ -22,6 +22,12 @@ app.use(express.urlencoded({extended: true}));
 const sessionOptions = {secret: "badsecret", resave: false, saveUninitialized: true};
 app.use(session(sessionOptions));
 
+const requireLogin = function (req, res, next) {
+    if(!req.session.user_id) {
+        return res.render("/login");
+    }
+    next();
+}
 
 app.get("/register", (req, res) => {
     res.render("register");
