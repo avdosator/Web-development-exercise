@@ -8,17 +8,20 @@ const User = require("./models/user");
 
 const app = express();
 
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "ejs");
-
-app.use(express.urlencoded({extended: true}));
-
 mongoose.connect("mongodb://127.0.0.1:27017/authDemo") 
     .then(() => {                                      
         console.log("Connected to database");
     }).catch(err => {
         console.log(err);
     });
+
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+
+app.use(express.urlencoded({extended: true}));
+const sessionOptions = {secret: "badsecret", resave: false, saveUninitialized: true};
+app.use(session(sessionOptions));
+
 
 app.get("/register", (req, res) => {
     res.render("register");
@@ -40,12 +43,20 @@ app.get("/login", async(req, res) => {
 
 app.post("/login", async(req, res) => {
     const {username, password} = req.body;
-    const user = await User.findOne({ username }); 
+    const user = await User.findOne({ username });
     const isValid = await bcrypt.compare(password, user.password);
     if(isValid) {       // we don't want to somebody to know if problem is in password or username, just say that problem is in one or other (we don't wanna give hackers a clue)
         res.send("WELCOME");    
     } else {
         res.send("TRY AGAIN");
+    }
+});
+
+app.get("/secret", (req, res) => {
+    if(req.session.user_id) {
+        res.send("If you see this you are logged in");
+    } else {
+        res.redirect("/login");
     }
 });
 
