@@ -60,12 +60,8 @@ app.post("/login", async(req, res) => {
     }
 });
 
-app.get("/secret", (req, res) => {
-    if(req.session.user_id) {
+app.get("/secret", requireLogin, (req, res) => {
         res.render("secret");
-    } else {
-        res.redirect("/login");
-    }
 });
 
 app.post("/logout", (req, res) => {
