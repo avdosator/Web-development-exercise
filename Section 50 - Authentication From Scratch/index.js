@@ -50,10 +50,9 @@ app.get("/login", async(req, res) => {
 
 app.post("/login", async(req, res) => {
     const {username, password} = req.body;
-    const user = await User.findOne({ username });
-    const isValid = await bcrypt.compare(password, user.password);
-    if(isValid) {       // we don't want to somebody to know if problem is in password or username, just say that problem is in one or other (we don't wanna give hackers a clue)
-        req.session.user_id = user._id;
+    const foundUser = await User.findAndValidate(username, password);
+    if(foundUser) {       // we don't want to somebody to know if problem is in password or username, just say that problem is in one or other (we don't wanna give hackers a clue)
+        req.session.user_id = foundUser._id;
         res.redirect("/secret");
     } else {
         res.redirect("/login");
