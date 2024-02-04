@@ -56,7 +56,7 @@ app.post("/login", async(req, res) => {
 
 app.get("/secret", (req, res) => {
     if(req.session.user_id) {
-        res.send("If you see this you are logged in");
+        res.render("secret");
     } else {
         res.redirect("/login");
     }
